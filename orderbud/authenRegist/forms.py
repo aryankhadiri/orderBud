@@ -41,10 +41,12 @@ class registerForm(forms.ModelForm):
     }))
     image = forms.ImageField()
 
+    username = forms.TextInput()
     class Meta:
         model = User
         fields = {
             'email',
             'password',
-            'image'
+            'image',
+            'username'
         }
