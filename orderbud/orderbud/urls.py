@@ -20,6 +20,6 @@ from landing.views import landing_view
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', landing_view, name = "landing_page"),
-    path('home', landing_view, name = "landing_page")
-
+    path('home', landing_view, name = "landing_page"),
+    path('login/', include("authenRegist.urls"))
 ]
