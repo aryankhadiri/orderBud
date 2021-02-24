@@ -117,7 +117,7 @@ class Review(models.Model):
  	favorited_types = models.CharField(max_length=10, choice= TYPE)
  	user = models.ForeignKey('User', on_delete = CASCADE)
 
- class Nutritious(object):
+ class Nutritious(models.Model):
  	nutri_id = models.CharField(max_length=20)
  	food_id = models.CharField(max_length=20)
  	calories = models.CharField(max_length=20)
