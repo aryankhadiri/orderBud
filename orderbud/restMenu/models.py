@@ -4,7 +4,7 @@ from django.db import models
 
 class Restaurant(models.Model):
 	rest_id = models.CharField(max_length = 20,primary_key = True)
-	username = models.CharField(max_length = 20)
+	username = models.CharField(max_lengtsh = 20)
 	passaword = models.CharField(max_length = 20)
 	rest_name = models.CharField(max_length = 50)
 	rest_phone = models.PhoneNumberField()
@@ -21,7 +21,7 @@ class Restaurant(models.Model):
 class User(models.Model):
 	 user_id = models.CharField(max_length=20)
 	 user_name = models.CharField(max_length=20)
-	 email_addr = models.EmailField()
+	 email_addr = models.EmailField(help_text='Valid email address is required')
 	 phone_number = models.PhoneNumberField()
 	 #image path needs to be specified later
 	 image = models.ImageField(upload_to=None, height_field=None, width_field=None, max_length=100)
@@ -44,7 +44,7 @@ class Food(models.Model):
 	isgfree = models.BooleanField()
 	#image path needs to be specified later
 	main_picture = models.ImageField(upload_to=None, height_field=None, width_field=None, max_length=100) 
-	description = models.TextField(max_length = 500)
+	description = models.TextField(max_length = 500,help_text='maximum of 500 characters')
 	food_ratings = models.IntegerField()
 	food_type = models.CharField(max_length = 20)
 	food_catagory = models.CharField(max_length = 20, choice = FOOD_CATAGORY)
@@ -57,6 +57,8 @@ class RestPictures(models.Model):
 	rest_id = models.CharField(, max_length=20)
 	#path?
 	pictures = models.ImageField()
+	restaurant = models.ForeignKey('Restaurant', on_delete = CASCADE)
+
 
 
 class FoodPictures(models.Model):
@@ -64,6 +66,8 @@ class FoodPictures(models.Model):
 	food_id = models.CharField(max_length=20)
 	#path?
 	pictures = models.ImageField()
+	food = models.ForeignKey('Food', on_delete = CASCADE)
+
 
 class RestHours(models.Model):
 	hours_id = models.CharField(max_length=20)
@@ -77,8 +81,48 @@ class RestHours(models.Model):
     	('SAT','Saturday'),
     	('SUN','Sunday'),
  	]
- 	day = models.CharField(max_length=20, choice=WEEKDAYS)
+ 	day = models.CharField(max_length=20, choice= WEEKDAYS)
  	openning = models.TimeField()
  	close = models.TimeField()
  	time_frame = models.CharField(max_length = 20, choices = (('AM','AM'),('PM','PM')), null=True, blank=True)
 
+class Message(models.Model):
+	message_id = models.CharField(max_length=20)
+	user_id = models.CharField(max_length=20)
+	rest_id = models.CharField(max_length=20)
+	timestamp = models.DateTimeField(auto_now_add=True)
+	text = models.TextField(max_length=500,help_text='maximum of 500 characters')
+	user = models.ForeignKey('User', on_delete = CASCADE)
+
+
+class Review(models.Model):
+	review_id = models.CharField(max_length=20)
+ 	rest_id = models.CharField(max_length=20)
+ 	user_id = models.CharField(max_length=20)
+ 	food_id = models.CharField(max_length=20)
+ 	review = models.TextField(max_length=500,help_text='maximum of 500 charaters')
+ 	rating = models.IntegerField()
+ 	timestamp = models.DateTimeField(auto_now_add=True)
+ 	user = models.ForeignKey('User', on_delete = CASCADE)
+
+ class Favorite(models.Model):
+ 	TYPE = [
+ 		('food','food'),
+ 		('restaurant','restaurant'),
+	]
+ 	favorite_id = models.CharField(max_length=20)
+ 	rest_id = models.CharField(max_length=20)
+ 	user_id = models.CharField(max_length=20)
+ 	food_id = models.CharField(max_length=20)
+ 	favorited_types = models.CharField(max_length=10, choice= TYPE)
+ 	user = models.ForeignKey('User', on_delete = CASCADE)
+
+ class Nutritious(object):
+ 	nutri_id = models.CharField(max_length=20)
+ 	food_id = models.CharField(max_length=20)
+ 	calories = models.CharField(max_length=20)
+ 	saturated_fat = models.CharField(max_length=20)
+ 	sodium = models.CharField(max_length=20)
+ 	sugar = models.CharField(max_length=20)
+
+ 		
