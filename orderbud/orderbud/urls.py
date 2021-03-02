@@ -17,9 +17,14 @@ from django.contrib import admin
 from django.urls import path
 from django.urls import include
 from landing.views import landing_view
+from authenRegist.views import register_view
+from django.conf import settings
+from django.conf.urls.static import static
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', landing_view, name = "landing_page"),
     path('home', landing_view, name = "landing_page"),
-    path('login/', include("authenRegist.urls"))
-]
+    path('login/', include("authenRegist.urls")),
+    path('register/', register_view, name = "register_view")
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -1,3 +1,22 @@
 <html>
-    {{form}}
+    {% load static %}
+    <link rel = "stylesheet" type = "text/css" href = "{% static 'css/login.css' %}">
+    <body>
+        <div class="main-content">
+            <div class="login_form">
+                <form action="">
+
+                    <div class="email">
+                        {{form.email}}
+                    </div>
+                    <div class="password">
+                        {{form.password}}
+                    </div>
+                    <div class="buttons">
+                        <input type = "submit" value = "Submit">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
 </html>

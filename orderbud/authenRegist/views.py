@@ -1,9 +1,9 @@
 from django.shortcuts import render
-from .forms import registerForm
+from .forms import registerForm, LoginForm
 # Create your views here.
 def login_view(request):
     #TODO login view
-    form = registerForm()
+    form = LoginForm()
     context = {
         "form":form
     }
@@ -11,4 +11,9 @@ def login_view(request):
 
 def register_view(request):
     #TODO register view
-    print("ASD")
+    form = registerForm()
+    context = {
+        "form": form
+    }
+    return render (request, "register.html", context)
+   
