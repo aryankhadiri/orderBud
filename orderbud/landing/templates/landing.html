@@ -1,6 +1,18 @@
 <head>
     {% load static %}
-    <link type = "text/css" rel = "stylesheet" href = "{% static 'css/landing.css' %}"
+    <link type = "text/css" rel = "stylesheet" href = "{% static 'css/landing.css' %}">
 </head>
-<h1> Hello Guys </h1>
-<h1>{{name}}</h1>
+    <body>
+        <div class="main-content">
+            <div class="welcome">
+
+            </div>
+            <div class="search-section">
+                <form action="/searchresult/" method = "GET">
+                    <input type = "text" name = "search-field" placeholder="Search for foods and restaurants">
+                    <input type = "submit" value = "Search">
+                </form>
+            </div>
+        </div>
+
+    </body>

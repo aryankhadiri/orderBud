@@ -1,0 +1,11 @@
+//Note: do not place any new line for each item. They all have to be on the same lane
+
+/****************** RESTAURANTS ******************/
+
+{"index":{"_id":1}}
+{"name": "restaurant1", "main_picture":"restaurant_main_pictures/<restaurant id>","street":"1234 First Avenue", "city":"San Jose", "state":"CA","zipcode":"95128","ratings":"0","overal_rate": "0", "type":"French"}
+
+
+/****************** FOODS ******************/
+{"index":{"_id":1}}
+{"restaurantId": "1", "name":"Chichekn Sandwich", "vigen": "True", "gluten_free":"True","rate": "0", "main_picture":"food_main_pictures/<food id>", "description":"authentic dish from southasia","ratings":"0", "type": "koran", "category": "Apetizer", "overal_rate":"0", "favorited": "0"}

@@ -125,3 +125,6 @@ MEDIA_ROOT = "orderbud/media"
 
 STATIC_ROOT = os.path.join(BASE_DIR,'static')
 STATIC_URL = '/static/'
+
+ELASTICSEARCH_HOST = "localhost"
+ELASTICSEARCH_PORT = "9200"
