@@ -123,3 +123,6 @@ AUTH_USER_MODEL = 'authenRegist.User'
 
 STATIC_ROOT = os.path.join(BASE_DIR,'static')
 STATIC_URL = '/static/'
+
+MEDIA_ROOT = '/media'
+MEDIA_URL = 'http://media.example.com/'
