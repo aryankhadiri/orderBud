@@ -40,7 +40,7 @@ class registerForm(forms.ModelForm):
         'id': 'password',
         'placeholder': 'Password',
     }))
-    image = forms.ImageField()
+    image = forms.ImageField
 
     username = forms.CharField(max_length=20, widget=forms.TextInput(attrs={
         "placeholder": "Username"
@@ -53,3 +53,11 @@ class registerForm(forms.ModelForm):
             'image',
             'username'
         }
+
+    def save(self, commit=True):
+        user = super(registerForm, self).save(commit=False)
+        user.email = cleaned_data['email']
+        user.username = cleaned_data['username']
+        
+        if commit:
+            user.save()

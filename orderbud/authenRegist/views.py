@@ -11,9 +11,15 @@ def login_view(request):
 
 def register_view(request):
     #TODO register view
-    form = registerForm()
-    context = {
-        "form": form
-    }
-    return render (request, "register.html", context)
+    if request.method == 'POST':
+        form = registerForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('/home')
+
+    else:
+       form = registerForm()
+
+       content = {'form': form}
+       return render(request, 'register.html', content)
    
