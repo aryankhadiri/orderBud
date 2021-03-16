@@ -28,7 +28,7 @@ class LoginForm(forms.ModelForm):
         fields = {
             'email',
             'password'
-            #do not include ids
+             #do not include ids
         }
 class registerForm(forms.ModelForm):
     email = forms.EmailField(widget=forms.EmailInput(attrs={

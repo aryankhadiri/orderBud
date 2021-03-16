@@ -7,6 +7,7 @@ def login_view(request):
     context = {
         "form":form
     }
+
     return render (request, "login.html", context)
 
 def register_view(request):
@@ -16,4 +17,3 @@ def register_view(request):
         "form": form
     }
     return render (request, "register.html", context)
-   

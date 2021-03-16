@@ -8,4 +8,4 @@
 
 /****************** FOODS ******************/
 {"index":{"_id":1}}
-{"restaurantId": "1", "name":"Chichekn Sandwich", "vigen": "True", "gluten_free":"True","rate": "0", "main_picture":"food_main_pictures/<food id>", "description":"authentic dish from southasia","ratings":"0", "type": "koran", "category": "Apetizer", "overal_rate":"0", "favorited": "0"}
+{"restaurantId": "1", "restaurantName":"restaurant1", "name":"Chichekn Sandwich", "vigen": "True", "gluten_free":"True","rate": "0", "main_picture":"food_main_pictures/<food id>", "description":"authentic dish from southasia","ratings":"0", "type": "koran", "category": "Apetizer", "overal_rate":"0", "favorited": "0"}

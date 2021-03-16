@@ -1,3 +1,32 @@
-<html>
-    hello
-</html>
+{% extends "base.html" %}
+
+{% block content %}
+<head>
+    {% load static %}
+    <link type = "text/css" rel = "stylesheet" href = "{% static 'css/search_result.css' %}">
+    {{foods|json_script:"foods_data"}}
+    {{restaurants|json_script:"restaurants_data"}}
+</head>
+<body>
+    <div class="results"></div>
+    <div class="search_results">
+        <div class="filters">
+            <div class="all-filter">All</div>
+            <div class="food-filter">Foods</div>
+            <div class="restaurant-filter">Restaurants</div>
+        </div>
+        <div class="search-results-right">
+            <div class="food-title">Foods</div>
+
+            <div class="foods-results">
+            </div>
+            <div class="restaurant-title">Restaurants</div>
+
+            <div class="restaurants-results"></div>
+        </div>
+        
+    </div>
+</body>
+<script src = "{% static 'js/jquery-3.6.0.min.js' %}"></script>
+<script src = "{% static 'js/search_result.js' %}"></script>
+{% endblock %}

@@ -4,9 +4,7 @@ from orderbud.settings import ELASTICSEARCH_HOST, ELASTICSEARCH_PORT
 # Create your views here.
 def landing_view(request):
 
-    result = searchForFood("chicken",es)
     context = {'name':"Ayush"}
-    print(result)
     return render(request, "landing.html", context)
 def search_result_view(request):
 
@@ -15,20 +13,17 @@ def search_result_view(request):
         return redirect("landing_view")
     
     es = Elasticsearch([{'host': ELASTICSEARCH_HOST, 'port':ELASTICSEARCH_PORT}])
-    foods = searchForFood(search_term,es)
+    foods = searchForFood(search_term, es)
     restaurants = searchForRestaurant(search_term, es)
-    food_total = len(foods)
-    restaurants_total = len(restaurants)
-    if foods != 0 or restaurants != 0:
-        #TODO no result found
-        total_result = 0
-    elif foods != -1 or restaurants != -1:
+    if foods != -1 or restaurants != -1:
         #TODO there was an error getting the information you want
         total_result = None
+    else:
+        total_result = len(foods) + len(restaurants_total)
+    #TODO display data on search_result page
 
-    total_result = food_total + restaurants_total
-
-    context = {}
+    context = {"foods":foods,
+               "restaurants":restaurants}
     return render(request, "search_result.html", context)
 
 
@@ -46,8 +41,7 @@ def searchForFood(searchTerm, es):
     except ElasticsearchException:
         return -1
     total_hit = search_result["hits"]["total"]["value"]
-    if total_hit == 0:
-        return 0
+    
     return search_result["hits"]["hits"]
 
 def searchForRestaurant(searchTerm, es):
@@ -64,6 +58,5 @@ def searchForRestaurant(searchTerm, es):
         return -1
     print(search_result)
     total_hit = search_result["hits"]["total"]["value"]
-    if total_hit == 0:
-        return 0
+    
     return search_result["hits"]["hits"]

@@ -1,18 +1,25 @@
 <head>
     {% load static %}
     <link type = "text/css" rel = "stylesheet" href = "{% static 'css/landing.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
 </head>
     <body>
         <div class="main-content">
-            <div class="welcome">
-
+            <div class="search-welcome">
+                <div class="welcome">
+                    <h1>Weclome to Orderbud</h1>
+                    <h2>Home of Foods and Restaurants</h2>
+                </div>
+                <div class="search-section">
+                    <form action="/searchresult/" method = "GET">
+                        <input type = "text" name = "search-field" placeholder="Search for foods and restaurants" id = "search-box">
+                        <input type = "submit" value = "Search" id = "search-button">
+                    </form>
+                </div>
             </div>
-            <div class="search-section">
-                <form action="/searchresult/" method = "GET">
-                    <input type = "text" name = "search-field" placeholder="Search for foods and restaurants">
-                    <input type = "submit" value = "Search">
-                </form>
-            </div>
+            
         </div>
 
     </body>

@@ -1,0 +1,90 @@
+body{
+    background:#f4f1f1;
+}
+.main-content{
+    width:80%;
+    margin:auto;
+    margin-top:5%;
+}
+
+.filters{
+    display:inline-block;
+    width:10%;
+    vertical-align:top;
+    height:80%;
+
+}
+.search-results-right{
+    display:inline-block;
+    width:85%;
+    vertical-align:top;
+    background:white;
+    height:100%;
+    padding:1%;
+    border-radius:5px;
+}
+.filters div{
+    margin-top:10%;
+    padding:10 5%;
+    Background:white;
+    border:none;
+    border-radius:5px 0 0 5px;
+    font-size:1.5vw;
+    color:#1f7e1f;
+}
+.foods-results, .restaurants-results{
+    padding:2%;
+}
+.left-picture-food ,.left-picture-rest{
+    display:inline-block;
+    width:15%;
+}
+.right-side-food, .right-side-rest{
+    width:84%;
+    display:inline-block;
+}
+.food-div, .rest-div{
+    border-bottom:1px solid gray;
+}
+.right-side-food div, .right-side-rest div{
+    margin-bottom:1.5%;
+}
+.food-name{
+    display:inline-block;
+    color:green;
+    font-weight:bold;
+    font-size:1.7vw;
+}
+.rest-name{
+    display:inline-block;
+    color:#0c5fd6;
+    font-weight:bold;
+    font-size:1.7vw;
+}
+.food-name:hover, .rest-name:hover{
+    text-decoration:underline;
+    cursor:pointer;
+}
+.food-rating, .rest-rating{
+    display:inline-block;
+    margin-left:5%;
+}
+.food-description{
+    background:#efeded;
+    padding:2%;
+    border-radius:3px;
+    font-size:1.2vw;
+
+}
+.food-title{
+    padding:2%;
+    color:green;
+    border-bottom:2px solid #258a25;
+    font-weight:bold;
+}
+.restaurant-title{
+     padding:2%;
+    color:#0c5fd6;
+    border-bottom:2px solid #0c5fd6;
+    font-weight:bold;
+}
