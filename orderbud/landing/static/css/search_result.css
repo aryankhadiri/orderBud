@@ -1,10 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap');
 body{
     background:#f4f1f1;
+}
+a:visited{
+    color: inherit;
 }
 .main-content{
     width:80%;
     margin:auto;
-    margin-top:5%;
+    margin-top:4%;
 }
 
 .filters{
@@ -24,24 +28,42 @@ body{
     border-radius:5px;
 }
 .filters div{
-    margin-top:10%;
-    padding:10 5%;
-    Background:white;
+    margin-top:5%;
+    padding:10% 5%;
     border:none;
-    border-radius:5px 0 0 5px;
-    font-size:1.5vw;
-    color:#1f7e1f;
+    border-bottom:1px solid black;
+    font-size:1.2vw;
+    color:#000000;
+    text-align:center;
+    font-family:"Arial";
+
+}
+.active-filter{
+    font-weight:bold;
+        background:#a7a6a685 !important;
+}
+.filters div:hover{
+    cursor: pointer;
+    background:#c5c5c585;
 }
 .foods-results, .restaurants-results{
-    padding:2%;
+    padding:1%;
 }
 .left-picture-food ,.left-picture-rest{
     display:inline-block;
     width:15%;
 }
+.left-picture-rest img{
+    width:100%;
+    border-radius:3%;
+   
+}
 .right-side-food, .right-side-rest{
-    width:84%;
+    width:82%;
     display:inline-block;
+    vertical-align:top;
+    margin-left:2%;
+
 }
 .food-div, .rest-div{
     border-bottom:1px solid gray;
@@ -49,25 +71,28 @@ body{
 .right-side-food div, .right-side-rest div{
     margin-bottom:1.5%;
 }
-.food-name{
+.food-name, .food-name a{
     display:inline-block;
     color:green;
     font-weight:bold;
-    font-size:1.7vw;
+    font-size:1.5vw;
+    text-decoration: none;
 }
-.rest-name{
-    display:inline-block;
+.rest-name, .rest-name a{
+    text-decoration: none;
+    display:inline;
     color:#0c5fd6;
     font-weight:bold;
-    font-size:1.7vw;
+    font-size:1.5vw;
 }
-.food-name:hover, .rest-name:hover{
-    text-decoration:underline;
+.food-name:hover, .rest-name a:hover{
+    color:rgb(78, 78, 78);
     cursor:pointer;
 }
 .food-rating, .rest-rating{
-    display:inline-block;
+    display:inline;
     margin-left:5%;
+    font-size: 1.3vw;
 }
 .food-description{
     background:#efeded;
@@ -78,13 +103,67 @@ body{
 }
 .food-title{
     padding:2%;
-    color:green;
-    border-bottom:2px solid #258a25;
+    color:#000000;
     font-weight:bold;
+    font-size:1.5vw;
+    border-radius:5px;
+    text-align:center;
+    background:#00701d6e;
+    Font-family:"Cambria";
 }
 .restaurant-title{
-     padding:2%;
-    color:#0c5fd6;
-    border-bottom:2px solid #0c5fd6;
+    padding:2%;
+    color:#000000;
     font-weight:bold;
+    font-size:1.5vw;
+    border-radius:5px;
+    text-align:center;
+    background:#003c706e;
+    Font-family:"Cambria";
+
+}
+.rest-div, .food-div{
+    padding: 0 0 2% 0;
+}
+.rest-rating div, .food-rating div{
+    display:inline;
+}
+.star-rate{
+    margin-left:1%;
+}
+.star-icon{
+    width:1.2vw;
+}
+
+.total-rate{
+    margin-left:3%;
+    font-size:1.2vw;
+    color:#2e95ff;
+}
+.rest-address ,.by-restaurant, .by-restaurant a{
+    font-size:1.2vw;
+    margin-top:2%;
+    font-family:arial;
+    text-decoration:none;
+}
+.by-restaurant a:hover{
+    color:rgb(43, 143, 177);
+}
+
+.no-show{
+    display: none;
+}
+.more-button{
+    width:20%;
+    padding:1% 0;
+    margin:auto;
+    margin-bottom:3%;
+    text-align:center;
+    background:lightgray;
+    border-radius:5px;
+    font-size:1.2vw;
+}
+.more-button:hover{
+    cursor:pointer;
+    background:#f6e0c0;
 }

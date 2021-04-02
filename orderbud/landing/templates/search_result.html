@@ -11,18 +11,35 @@
     <div class="results"></div>
     <div class="search_results">
         <div class="filters">
-            <div class="all-filter">All</div>
+            <div class="all-filter active-filter">All</div>
+            {% if foods|length > 0 %}
             <div class="food-filter">Foods</div>
+            {% endif %}
+
+            {% if restaurants|length > 0 %}
             <div class="restaurant-filter">Restaurants</div>
+            {% endif %}
         </div>
         <div class="search-results-right">
+            {% if foods|length > 0 %}
             <div class="food-title">Foods</div>
-
+            {% endif %}
             <div class="foods-results">
             </div>
+            {% if foods|length > 0 %}
+            <div class="more-button" id = "more-food-button">More Food</div>
+            {% endif %}
+
+            {% if restaurants|length > 0 %}
             <div class="restaurant-title">Restaurants</div>
+            {% endif %}
 
             <div class="restaurants-results"></div>
+            {% if restaurants|length > 0 %}
+            <div class="more-button" id = "more-restaurant-button">More Restaurant</div>
+            {% endif %}
+
+
         </div>
         
     </div>
