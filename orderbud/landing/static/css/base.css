@@ -47,7 +47,7 @@ nav{
 #search-button{
   font-size:1.2vw;
   margin-left:4%;
-  padding:1.6% 2.8%;
+  padding:1.3% 2.2%;
   outline:none;
   border:none;
   border-radius:5px;
@@ -61,4 +61,62 @@ nav{
   margin-left:3%;
   text-decoration: none;
   color:black;
+}
+.login-drop{
+  text-align:right;
+  margin-right:2%;
+  font-size:1.2vw;
+}
+.login-drop button{
+  font-size:1.2vw;
+  margin-left:4%;
+  padding:2.5% 5%;
+  outline:none;
+  border:none;
+  border-radius:5px;
+  font-weight:200;
+  font-family:"Arial";
+  background:#e5e5e5;
+}
+.login-dropdown-menu{
+  position:absolute;
+  top:12%;
+  right:2%;
+  background:yellow;
+  padding:2%;
+}
+.login-dropdown-menu input{
+  display:block;
+  margin-bottom:3%;
+  padding:1%;
+  text-align:center;
+  width:100%;
+}
+.messages{
+  width:50%;
+  margin:auto;
+  padding:1%;
+  font-size:1.1vw;
+  font-family:Arial;
+
+}
+.errorlist{
+  display:inline-block;
+  list-style-type:none;
+ 
+}
+.errorlist ul{
+  list-style-type:disc;
+  margin-bottom:2%
+  
+}
+.errorlist ul li{
+  color:
+}
+.success-message{
+  background:green;
+}
+.error-message{
+  background:#ff000091;
+ 
 }

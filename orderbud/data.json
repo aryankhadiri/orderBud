@@ -3,7 +3,7 @@
 /****************** RESTAURANTS ******************/
 
 {"index":{"_id":1}}
-{"name": "restaurant1", "main_picture":"restaurant_main_pictures/<restaurant id>","street":"1234 First Avenue", "city":"San Jose", "state":"CA","zipcode":"95128","ratings":"0","overal_rate": "0", "type":"French"}
+{"name": "restaurant1", "main_picture":"restaurant_main_pictures/<restaurant id>","street":"1234 First Avenue", "city":"San Jose", "state":"CA","zipcode":"95128","phone":"4081236565", "ratings":"0","overal_rate": "0", "type":"French"}
 
 
 /****************** FOODS ******************/

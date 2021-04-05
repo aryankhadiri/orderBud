@@ -13,8 +13,36 @@
                 </form>
             </div>
         </div>
-        <div class="right-nav"></div>
+        <div class="right-nav">
+            {% if not current_user %}
+            <div class="login-drop"><button class = "login">Login</button>
+            <div class="login-dropdown-menu">
+                <form method = "POST" action = "">
+                    <input type = "text" class = "username-text" name = "username-text" placeholder="Username" required>
+                    <input type = "password" class = "username-text" name = "username-text" placeholder="Username" required>
+                    <input type = "submit" value = "Login">
+                </form>
+            </div>
+            </div>
+            {% endif %}
+        </div>
     </nav>
+    <div class="messages">
+        {% if messages %}
+        
+        {% for message in messages %}
+            {% if message.tags == 'SUCCESS' %}
+            <div class="success-message">
+                {{message}}
+            </div>
+            {% else %}
+            <div class="error-message">
+                {{message}}
+            </div>
+            {% endif %}
+            {% endfor %}
+            {% endif %}
+    </div>
     <div class="main-content">    {%block content %}{% endblock %}
     </div>
 </html>

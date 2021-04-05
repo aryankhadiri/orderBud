@@ -40,8 +40,7 @@ class registerForm(forms.ModelForm):
         'id': 'password',
         'placeholder': 'Password',
     }))
-    image = forms.ImageField()
-
+    image = forms.ImageField(required = False)
     username = forms.CharField(max_length=20, widget=forms.TextInput(attrs={
         "placeholder": "Username"
     }))

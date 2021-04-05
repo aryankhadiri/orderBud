@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import (BaseUserManager, AbstractBaseUser)
-
+from orderbud.settings import MEDIA_ROOT
 # Create your models here.
 class UserManager(BaseUserManager):
     def create_user(self, email, password = None, ismanager=None):
@@ -28,7 +28,7 @@ class User(AbstractBaseUser):
     email = models.EmailField(unique= True, verbose_name = 'email address', null = False, blank = False)
     manager = models.BooleanField(default=False, null=True)
     username = models.TextField(unique=True, verbose_name="username", null = False, blank = False, max_length="15")
-    image = models.ImageField(blank = True, null = True, upload_to = "profile_image")
+    image = models.ImageField(blank = True, null = True, upload_to = "profile_image", verbose_name="image")
     def set_manager(self, ismanager):
         self.manager = ismanager
     def get_full_name(self):

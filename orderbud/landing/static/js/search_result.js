@@ -16,7 +16,7 @@ function displayFoods(food_data){
         for (i = foodsDisplayed; i < foodsDisplayed + limitToShowFood; i++){
             food = food_data[i];
             $(".foods-results").append("<div class = 'food-div'><div class = 'left-picture-food'>"+ "<img></div>" + 
-            "<div class = 'right-side-food'>"+"<div class = 'food-name'>" + "<a href = 'foods/" + food["_id"] + "'>"+ food["_source"].name + 
+            "<div class = 'right-side-food'>"+"<div class = 'food-name'>" + "<a href = '/details/foods/" + food["_id"] + "'>"+ food["_source"].name + 
             "</a></div><div class = 'food-rating'>"+ "<div class = 'rate-value'>" + food["_source"].overal_rate +
             "</div><div class = 'star-rate'><img src = '/media/icons/star.svg' class = 'star-icon'></div>"+
             "<div class = 'total-rate'>" + "("+ food["_source"].ratings + ")" + "</div></div>" + "<div class = 'food-description'>" + food["_source"].description + "</div>" +
@@ -39,7 +39,7 @@ function displayRestaurants(restaurants_data){
         for (i = restaurantsDisplayed; i < restaurantsDisplayed + limitToShowRest; i++){
             rest = restaurants_data[i]
             $(".restaurants-results").append("<div class = 'rest-div'><div class = 'left-picture-rest'>"+"<img src = '/media/"+rest["_source"].main_picture +"'></div>"+
-            "<div class = 'right-side-rest'>"+"<div class = 'rest-name'>"+ "<a href = '/restaurants/"+rest["_id"] + "'>" + rest["_source"].name + "</a>" +
+            "<div class = 'right-side-rest'>"+"<div class = 'rest-name'>"+ "<a href = '/details/restaurants/"+rest["_id"] + "'>" + rest["_source"].name + "</a>" +
             "</div><div class = 'rest-rating'>" + "<div class = 'rate-value'>" + rest["_source"].overal_rate + 
             "</div><div class = 'star-rate'><img src = '/media/icons/star.svg' class = 'star-icon'></div>"+ "<div class = 'total-rate'>" + "(" + rest["_source"].ratings + ")" + "</div>" +
             "</div><div class = 'rest-address'>" + rest["_source"].city + ","  + rest["_source"].state + "</div></div>");

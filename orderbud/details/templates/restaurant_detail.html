@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block content %}
+<head>
+    {% load static %}
+    <link type = "text/css" rel = "stylesheet" href = "{% static 'css/restaurant_details.css' %}">
+</head>
+<body>
+    <div class="top-div">
+        <div class="left-div">
+            <div class="main-picture">
+                <img src = "/media/{{restaurant_info.main_picture}}">
+            </div>
+        </div>
+        <div class="right-div">
+            <div class="name-div">
+                {{restaurant_info.name}}
+            </div>
+            <div class="rate-info">
+                <div class="stars">{{restaurant_info.overal_rate}}<img src = '/media/icons/star.svg' class = 'star-icon'></div>
+                <div class="total-ratings">{{restaurant_info.ratings}}</div>
+            </div>
+            <div class="address-contact">
+                <div class="address"><label class = "label">Address:</label> <p>{{restaurant_info.street}}, {{restaurant_info.city}}, {{restaurant_info.state}}, {{restaurant_info.zipcode}}</p></div>
+                <div class="contact"><label class = "label">Phone:</label><p>{{restaurant_info.phone}}</p></div>
+            </div>
+        </div>
+        
+    </div>
+    <div class="middle-div">
+        <div class="pictures-title">Pictures</div>
+        <div class="pictures">
+        {% for pic in pictures %}
+        <div class="restaurant-img"><a href = "{{pic}}"><img src = "{{pic}}"></a></div>
+        {% endfor %}
+    </div>
+    </div>
+    <div class="bottom-div">
+        <div class="pictures-title" id = "reviews-title">Reviews</div>
+        <div class="reviews"></div>
+    </div>
+</body>
+{% endblock %}

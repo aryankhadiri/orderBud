@@ -5,18 +5,17 @@
 .main-content{
     width: 50%;
     margin:auto;
-    box-shadow: rgb(82, 82, 82) 1px 1px 1px 1px;
+    background:#ececec;
     border-radius: 5px;
-    margin-top:5%;
+    margin-top:4%;
     padding:1%;
     
 }
 .register-form{
     width: 75%;
-    margin:5% auto;
-    background:rgba(0, 94, 0, 0.618);
-    margin-top:5%;
-    padding:5%;
+    margin:auto;
+    margin-top:2%;
+    padding:0 1%;
     border-radius:5px;
 }
 .register-form div{
@@ -30,15 +29,15 @@
     font-size:1rem;
     border-radius:2px;
     border:none;
-    border-bottom: white 1px solid;
+    border-bottom: #023500 1px solid;
     background:transparent;
-    color:white;
+    color:#013c00;
     padding:2%;
     outline:none;
 
 }
 .register-form div input::placeholder{
-    color:lightgray;
+    color:#00430b;
 }
 .buttons input[type="submit"]{
   width:80%;
@@ -47,8 +46,17 @@
   padding:2%;
   border-radius: 5px;
   border:none;
+  background:#038017;
+  color:white;
 }
 .buttons input[type="submit"]:hover{
-  background:aliceblue;
+  background:#034801;
   cursor:pointer;
+}
+
+.register-form .image label{
+  text-align:center;
+  font-family:Arial;
+  display:block;
+    
 }
