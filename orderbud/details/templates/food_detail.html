@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% block content %}
+<head>
+    {% load static %}
+    <link type = "text/css" rel = "stylesheet" href = "{% static 'css/food_details.css' %}">
+
+</head>
+<body>
+    {{food_info}}
+    <div class="filters">
+        <div class="home-filter active-filter">Home</div>
+        <div class="menu-filter">Menu</div>
+    </div>
+    <div class="food_home">
+        <div class="top-div">
+            <div class="left-div">
+                <div class="main-picture">
+                    <img src = "/media/{{food_info.main_picture}}">
+                </div>
+            </div>
+            <div class="right-div">
+                <div class="name-div">
+                    {{food_info.name}}
+                </div>
+                <div class="food-category">
+                    Category: {{food_info.category}}
+                </div>
+                <div class="rate-info">
+                    <div class="stars">{{food_info.overal_rate}}<img src = '/media/icons/star.svg' class = 'star-icon'></div>
+                    <div class="total-ratings">{{food_info.ratings}}</div>
+                </div>
+                <div class="food_description">{{food_info.description}}</div>
+                <div class="misc-details">
+                    {% if food_info.vigen %}
+                    {% if food_info.vigen == "True" %}
+                    <div class="item-vigen">Vigen: Yes</div>
+                    {%else%}
+                    <div class="item-vigen">Vigen: No</div>
+                    {% endif %}
+                    {% endif %}
+
+                    {% if food_info.gluten_free %}
+                    {% if food_info.gluten_free == "True" %}
+                    <div class="item-gluten">Gluten Free: Yes</div>
+                    {%else%}
+                    <div class="item-gluten">Gluten Free: No</div>
+                    {% endif %}
+                    {% endif %}
+                </div>
+                <div class="restaurant_page">
+                    Restaurant: <a href = "details/restaurants/{{food_info.restaurant_id}}">{{food_info.restaurantName}}</a>
+                </div>
+            </div>
+        </div>
+        <div class="middle-div">
+            <div class="pictures-title">Pictures</div>
+            <div class="pictures">
+            {% for pic in pictures %}
+            <div class="picture-img"><a href = "{{pic}}"><img src = "{{pic}}"></a></div>
+            {% endfor %}
+        </div>
+        </div>
+        <div class="bottom-div">
+            <div class="pictures-title" id = "reviews-title">Reviews</div>
+            <div class="reviews"></div>
+        </div>
+    </div>
+</div>
+
+    <script src = "{% static 'js/jquery-3.6.0.min.js' %}"></script>
+    <script src = "{% static 'js/food_details.js' %}"></script>
+</body>
+{% endblock %}

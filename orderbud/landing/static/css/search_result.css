@@ -40,7 +40,7 @@ a:visited{
 }
 .active-filter{
     font-weight:bold;
-        background:#a7a6a685 !important;
+    background:#a7a6a685 !important;
 }
 .filters div:hover{
     cursor: pointer;

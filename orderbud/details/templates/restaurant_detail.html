@@ -3,40 +3,119 @@
 <head>
     {% load static %}
     <link type = "text/css" rel = "stylesheet" href = "{% static 'css/restaurant_details.css' %}">
+
 </head>
 <body>
-    <div class="top-div">
-        <div class="left-div">
-            <div class="main-picture">
-                <img src = "/media/{{restaurant_info.main_picture}}">
+    {{menu|json_script:"menu_data"}}
+    {{reviews|json_script:"reviews_data"}}
+
+
+    <div class="filters">
+        <div class="home-filter active-filter">Home</div>
+        <div class="menu-filter">Menu</div>
+    </div>
+    <div class="restaurant_home">
+        <div class="top-div">
+            <div class="left-div">
+                <div class="main-picture">
+                    <img src = "/media/{{restaurant_info.main_picture}}">
+                </div>
+            </div>
+            <div class="right-div">
+                <div class="name-div">
+                    {{restaurant_info.name}}
+                </div>
+                <div class="rate-info">
+                    <div class="stars">{{restaurant_info.overal_rate}}<img src = '/media/icons/star.svg' class = 'star-icon'></div>
+                    <div class="total-ratings">{{restaurant_info.ratings}}</div>
+                </div>
+                <div class="address-contact">
+                    <div class="address"><label class = "label">Address:</label> <p>{{restaurant_info.street}}, {{restaurant_info.city}}, {{restaurant_info.state}}, {{restaurant_info.zipcode}}</p></div>
+                    <div class="contact"><label class = "label">Phone:</label><p>{{restaurant_info.phone}}</p></div>
+                </div>
             </div>
         </div>
-        <div class="right-div">
-            <div class="name-div">
-                {{restaurant_info.name}}
-            </div>
-            <div class="rate-info">
-                <div class="stars">{{restaurant_info.overal_rate}}<img src = '/media/icons/star.svg' class = 'star-icon'></div>
-                <div class="total-ratings">{{restaurant_info.ratings}}</div>
-            </div>
-            <div class="address-contact">
-                <div class="address"><label class = "label">Address:</label> <p>{{restaurant_info.street}}, {{restaurant_info.city}}, {{restaurant_info.state}}, {{restaurant_info.zipcode}}</p></div>
-                <div class="contact"><label class = "label">Phone:</label><p>{{restaurant_info.phone}}</p></div>
+        <div class="middle-div">
+            <div class="pictures-title">Pictures</div>
+            <div class="pictures">
+            {% for pic in pictures %}
+            <div class="restaurant-img"><a href = "{{pic}}"><img src = "{{pic}}"></a></div>
+            {% endfor %}
+        </div>
+        </div>
+        <div class="bottom-div">
+            <div class="pictures-title" id = "reviews-title">Reviews</div>
+            <div class="reviews">
+                <div class="user-review">
+                    {% if request.user.is_anonymous %}
+                    <div class="no-review">Would you like to write a review? Please login first.<button class="login">Login</button></div>
+                    {% else %}
+                    <div class="new-review">
+                        <form action="" method = "POST">
+                            <input type = "text" placeholder="Review Title" name = "reviewText" id = "reviewTitle">
+                            <label for = "overal-experience">Overal Experience</label>
+                            <select id = "rating-select">
+                                <option value = "1">1</option>
+                                <option value = "2">2</option>
+                                <option value = "3">3</option>
+                                <option value = "4">4</option>
+                                <option selected = "selected" value = "5">5</option>
+                            </select><img src='/media/icons/star.svg' class='star-icon'>
+                            <textarea type = "textarea" placeholder="Write your review here" id = "reviewText"></textarea>
+                            <input type = "submit" value = "Submit">
+
+                        </form>
+                    </div>
+                    {% endif %}
+                </div>
             </div>
         </div>
-        
     </div>
-    <div class="middle-div">
-        <div class="pictures-title">Pictures</div>
-        <div class="pictures">
-        {% for pic in pictures %}
-        <div class="restaurant-img"><a href = "{{pic}}"><img src = "{{pic}}"></a></div>
-        {% endfor %}
-    </div>
-    </div>
-    <div class="bottom-div">
-        <div class="pictures-title" id = "reviews-title">Reviews</div>
-        <div class="reviews"></div>
-    </div>
+
+        <div class="menu-list no-show">
+            {% for key,value in menu.items %}
+            <div class="category div-{{key}}">
+                <div class="category-title">{{key}}</div>
+            </div>
+            {% for food in value %}
+            <div class="menu-item">
+                <div class="left-div">
+                    <div class="item-picture">
+                        <img src = "/media/{{food.main_picture}}">
+                    </div>
+                </div>
+                <div class="right-div">
+                    <div class="item-name"><a href = "/foods/{{food.id}}">{{food.name}}</a></div>
+                    <div class="item-rate">{{food.overal_rate}}</div>
+                    <div class="item-ratings">({{food.ratings}})</div>
+                    <div class="item-price">${{food.price}}</div>
+                    <div class="item-description">{{food.description}}</div>
+                    <div class="misc-details">
+                    {% if food.vigen %}
+                    {% if food.vigen == "True" %}
+                    <div class="item-vigen">Vigen: Yes</div>
+                    {%else%}
+                    <div class="item-vigen">Vigen: No</div>
+                    {% endif %}
+                    {% endif %}
+
+                    {% if food.gluten_free %}
+                    {% if food.gluten_free == "True" %}
+                    <div class="item-gluten">Gluten Free: Yes</div>
+                    {%else%}
+                    <div class="item-gluten">Gluten Free: No</div>
+                    {% endif %}
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+            {% endfor %}
+        </div>
+            
+
+</div>
+    
+    <script src = "{% static 'js/jquery-3.6.0.min.js' %}"></script>
+    <script src = "{% static 'js/restaurant_details.js' %}"></script>
 </body>
 {% endblock %}

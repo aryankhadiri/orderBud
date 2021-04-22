@@ -1,13 +1,12 @@
 from django.shortcuts import render, redirect
 from elasticsearch import Elasticsearch
 from orderbud.settings import ELASTICSEARCH_HOST, ELASTICSEARCH_PORT
+from django.contrib import messages
 # Create your views here.
 def landing_view(request):
-
-    context = {'name':"Ayush"}
+    context = {}
     return render(request, "landing.html", context)
 def search_result_view(request):
-
     search_term = request.GET.get("search-field")
     if search_term == "" or search_term is None:
         return redirect("landing_view")
@@ -60,3 +59,5 @@ def searchForRestaurant(searchTerm, es):
     total_hit = search_result["hits"]["total"]["value"]
     
     return search_result["hits"]["hits"]
+
+

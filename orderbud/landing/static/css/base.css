@@ -5,6 +5,7 @@
   box-sizing:border-box;
   margin:0;
 }
+
 nav{
     width:100%;
     background:#09590996;
@@ -79,19 +80,48 @@ nav{
   background:#e5e5e5;
 }
 .login-dropdown-menu{
-  position:absolute;
-  top:12%;
-  right:2%;
-  background:yellow;
-  padding:2%;
+  margin-top:.1%;
+  right:0;
+  box-shadow:1px 1px 1px 1px #4c974a;
+  background:#f2f2f285;
+  padding:1%;
+  display:none;
+  width:50%;
+  margin-left:49%;
+  font-size:1.5vw;
 }
 .login-dropdown-menu input{
-  display:block;
-  margin-bottom:3%;
+  display:inline;
   padding:1%;
+  border:none;
+  background:transparent;
+  border-bottom:green 1px solid;
+  font-size:1.3vw;
   text-align:center;
-  width:100%;
+  width:39%;
 }
+#login-button{
+  width:20%;
+  background:#e1e5e2;
+  border:1px solid gray;;
+  border-radius:2px;
+}
+.login-dropdown-menu input:focus{
+  border-bottom:3px solid #059d2d;
+  outline:none;
+}
+
+.login-dropdown-menu form a{
+  text-align:center;
+  color:#0000f7;
+  display:block;
+  margin-top:2%;
+  font-size:1.2vw;
+}
+.login-dropdown-menu form a:visited{
+  color:#0000f7;
+}
+
 .messages{
   width:50%;
   margin:auto;
@@ -107,16 +137,48 @@ nav{
 }
 .errorlist ul{
   list-style-type:disc;
-  margin-bottom:2%
-  
 }
-.errorlist ul li{
-  color:
-}
+
 .success-message{
-  background:green;
+  background:#26ea26;
+  padding:2%;
+  text-align:center;
+  color:black;
+  font-size:1.2vw;
+  width:100%;
+  border-radius:5px;
+
 }
 .error-message{
-  background:#ff000091;
+  background:#ff0000f0;
+  padding:1%;
+  text-align:center;
+  border-radius:5px;
+  color:white;
+  font-size:1.2vw;
+
  
+}
+.hide-temp{
+  display:none;
+}
+#login-button:hover, .login:hover, #search-button:hover, #logout-button:hover{
+  cursor:pointer;
+  background:lightyellow;
+}
+.logout{
+  text-align:right;
+}
+.logout p{
+  display:inline;
+ 
+  margin-right:5%;
+  color:white;
+  font-size:1.5vw;
+}
+#logout-button{
+  border-radius:5px;
+  border:none;
+  padding:3%;
+  font-size:1.3vw;
 }
