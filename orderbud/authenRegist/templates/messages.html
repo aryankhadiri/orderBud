@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+<head>
+    {% load static %}
+    <link rel = "stylesheet" type = "text/css" href="{% static 'css/messages.css' %}">
+</head>
+{{messages_list|json_script:"list_messages"}}
+<div class="main-content">
+    <div class="your-messages">Your Messages</div>
+    <div class="chat-list">
+        <div class="chat-banner">Restaurants</div>
+
+        {% for key,value in messages_list.items %}
+        <div class="chat">
+            <div class="chat-person">{{key}}</div>
+            <div class="chat-last-message">{{value|getFirstMessage}}</div>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="user-messages">
+        <div class="messages-box">
+        </div>
+        <div class="sent-message" hidden>
+            <form action = "" method = "POST" id = "send-message-form">
+                {% csrf_token %}
+                <input type = "text" id = "text-box" required name = "new-message" placeholder="Type your message here ...">
+                <input type = "submit" value = "Send" id = "send-button" >
+            </form>
+        </div>
+    </div>
+    
+</div>
+<script src = "{% static 'js/jquery-3.6.0.min.js' %}"></script>
+<script src = "{% static 'js/messages.js' %}"></script>
+{% endblock %}

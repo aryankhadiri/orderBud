@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+<head>
+    {% load static %}
+    <link type = "text/css" rel = "stylesheet" href = "{% static 'css/sendMessage.css' %}"
+</head>
+<div class="main-content">
+    <div class="rest-title">Sending a message to <b>{{restName}}</b></div>
+    <form method = "POST" action = "">
+        {% csrf_token %}
+        <div class="message-text">
+        <textarea placeholder="Write your message here ... " name = "messageText" required></textarea>
+        </div>
+        <div class="message-send-button">
+            <input type = "Submit" value = "Send">
+
+        </div>
+    </form>
+    <div class="message-text"></div>
+</div>
+{% endblock %}

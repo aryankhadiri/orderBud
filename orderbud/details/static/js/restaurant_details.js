@@ -8,7 +8,7 @@ function displayReviews(reviews_data){
         var limitToShowReviews = Object.keys(reviews_data).length - reviewsDisplayed;
     }
     if (limitToShowReviews == 0){
-        $("#more-review-button").addClass("no-show");
+        $(".more-reviews").addClass("no-show");
     }
     else{
         for (i = reviewsDisplayed; i < reviewsDisplayed + limitToShowReviews; i++){
@@ -24,6 +24,10 @@ function displayReviews(reviews_data){
     }
 }
 $(document).ready(function(){
+    $("#total-ratings").on("click", function(){
+        document.getElementById("reviews").scrollIntoView({behavior: 'smooth'});
+    })
+
     var reviews = JSON.parse($("#reviews_data").text());
     $(".filters div").on("click", function(){
         for (child of $(".filters").children()){
@@ -50,5 +54,7 @@ $(document).ready(function(){
         }
     }*/
     displayReviews(reviews);
-    
+    $(".more-reviews").on("click",function(){
+        displayReviews(reviews);
+    })
 })

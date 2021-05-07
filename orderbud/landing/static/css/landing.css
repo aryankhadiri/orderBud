@@ -17,15 +17,18 @@
 
 }
 .welcome{
-    padding:5%;
+    padding:2%;
     text-align:center;
 }
 .welcome *{
-    padding:2%;
+    padding:1%;
 }
-.welcome h1{
+
+.welcome-sentence h1, .welcome-sentence h2{
     color:green;
+    display:inline;
 }
+
 .search-section{
     padding:5%;
     border:2px solid green;

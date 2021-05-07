@@ -1,4 +1,4 @@
-var limitPerItems = 10;
+var limitPerItems = 5;
 var foodsDisplayed = 0;
 var restaurantsDisplayed = 0;
 function displayFoods(food_data){
@@ -15,7 +15,7 @@ function displayFoods(food_data){
 
         for (i = foodsDisplayed; i < foodsDisplayed + limitToShowFood; i++){
             food = food_data[i];
-            $(".foods-results").append("<div class = 'food-div'><div class = 'left-picture-food'>"+ "<img></div>" + 
+            $(".foods-results").append("<div class = 'food-div'><div class = 'left-picture-food'>"+ "<img src = '/media/"+food["_source"].main_picture +"'></div>" + 
             "<div class = 'right-side-food'>"+"<div class = 'food-name'>" + "<a href = '/details/foods/" + food["_source"]["id"] + "'>"+ food["_source"].name + 
             "</a></div><div class = 'food-rating'>"+ "<div class = 'rate-value'>" + food["_source"].overal_rate +
             "</div><div class = 'star-rate'><img src = '/media/icons/star.svg' class = 'star-icon'></div>"+

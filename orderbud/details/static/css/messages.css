@@ -1,0 +1,146 @@
+body{
+    background:#f2f2f2;
+}
+.main-content{
+    width:80%;
+    margin:auto;
+    margin-top:1%;
+}
+.messages-date{
+    text-align:center;
+    width:20%;
+    margin:auto;
+    color:gray;
+    padding:1%;
+    border-radius:5px;
+    font-size:1vw;
+    font-family:arial;
+}
+.chat-list{
+    display:inline-block;
+    width:25%;
+    border:1.5px solid #6c906c;
+    vertical-align:top;
+    background:white;
+    border-radius:5px;
+    height:70%;
+}
+.chat{
+    display:block;
+    padding:4%;
+    border-bottom:1px solid gray;
+    font-family:Arial;
+}
+.chat-person{
+    font-size:1vw;
+    padding:2%;
+    margin-bottom:2%;
+}
+.chat-last-message{
+    font-size:.8vw;
+    color:gray;
+    padding:2%;
+    overflow-x:hidden;
+    overflow-y:hidden;
+    height:5%;
+    width:100%;
+}
+.chat:hover{
+    background:lightyellow;
+    cursor:pointer;
+}
+.user-messages{
+    display:inline-block;
+    padding:2%;
+    border:1.5px solid #6c906c;
+    border-radius:5px;
+    width:74%;
+    background:white;
+    height:70%;
+}
+.messages-box{
+    height:90%;
+    overflow-y:auto;
+}
+.message-sent{
+    display:block;
+    width:50%;
+    margin-left:49%;
+    text-align:right;
+    margin-bottom:2%;
+}
+.message-recv{
+    display:block;
+    width:50%;
+    text-align:left;
+    margin-bottom:2%;
+
+}
+.message-sent .message-text{
+    background:#109500;
+    color:white;
+    padding:2%;
+    border-radius:5px 0 5px 5px;
+    display:inline-block;
+}
+.message-recv .message-text{
+    background:#6e6e6e;
+    color:white;
+    padding:2%;
+    border-radius:0px 5px 5px 5px;
+    display:inline-block;
+}
+.message-recv .message-time{
+    display:inline;
+    margin-left:2%;
+    font-size:.8vw;
+    font-family:arial;
+
+}
+.message-sent .message-time{
+    display:inline;
+    margin-left:2%;
+    font-size:.8vw;
+    font-family:arial;
+
+}
+
+#send-button{
+    background:#29a5ee;
+    color:white;
+    border:1px solid gray;
+    padding:0.8%;
+    width:9%;
+    border-radius:5px;
+    font-size:1vw;
+}
+#text-box{
+    padding:0.8%;
+    width:90%;
+    border-radius:5px;
+    border:1px solid lightgray;
+    font-size:1vw;
+    overflow-y:auto;
+    overflow-x:auto;
+}
+.sent-message{
+    margin-top:3%;
+}
+.active-chat{
+    background:rgb(0 91 0 / 18%);
+}
+.your-messages{
+    text-align:center;
+    padding:1%;
+    color:gray;
+    font-size:1.2vw;
+    font-family:arial;
+}
+.chat-banner{
+    padding:5% 2%;
+    text-align:center;
+    background:#013f0194;
+    color:white;
+    font-family:arial;
+    
+}

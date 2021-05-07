@@ -4,7 +4,7 @@
         <link type = "text/css" rel = "stylesheet" href = "{% static 'css/base.css' %}">
     </head>
     <nav>
-        <div class="left-nav"><div class="logo"><a href = "/">OrderBud</a></div></div>
+        <div class="left-nav"><div class="logo"><a href = "/"><img src = "/media/logo/logoWhite.png"></a></div></div>
         <div class="middle-nav">
             <div class="search-section">
                 <form action="/searchresult/" method = "GET">
@@ -19,6 +19,8 @@
             
             </div>
             {% else %}
+            <div class="messages-link"><a href = "/messages/{{request.user.id}}">Messages</a>
+            </div>
             <div class="logout" class = "login-drop">
                 <form method = "POST" action = "/logout/">
                     {% csrf_token %}                    

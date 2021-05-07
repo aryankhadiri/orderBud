@@ -24,10 +24,13 @@
             <div class="right-div">
                 <div class="name-div">
                     {{restaurant_info.name}}
+                    {% if user.is_authenticated %}
+                    <a class = "new-message-button" href = "/sendmessage/{{request.user.id}}&{{restaurant_info.id}}">Send Message</a>
+                    {% endif %}
                 </div>
                 <div class="rate-info">
                     <div class="stars">{{restaurant_info.overal_rate}}<img src = '/media/icons/star.svg' class = 'star-icon'></div>
-                    <div class="total-ratings">{{restaurant_info.ratings}}</div>
+                    <div class="total-ratings" id = "total-ratings">(<p>{{restaurant_info.ratings}}</p>)</div>
                 </div>
                 <div class="address-contact">
                     <div class="address"><label class = "label">Address:</label> <p>{{restaurant_info.street}}, {{restaurant_info.city}}, {{restaurant_info.state}}, {{restaurant_info.zipcode}}</p></div>
@@ -45,23 +48,26 @@
         </div>
         <div class="bottom-div">
             <div class="pictures-title" id = "reviews-title">Reviews</div>
-            <div class="reviews">
+            <div class="reviews" id = "reviews">
                 <div class="user-review">
                     {% if request.user.is_anonymous %}
                     <div class="no-review">Would you like to write a review? Please login first.<button class="login">Login</button></div>
                     {% else %}
+                    <h4>Write your review here</h4>
+
                     <div class="new-review">
                         <form action="" method = "POST">
-                            <input type = "text" placeholder="Review Title" name = "reviewText" id = "reviewTitle">
+                            {% csrf_token %}
+                            <input type = "text" placeholder="Review Title" name = "reviewTitle" id = "reviewTitle" required>
                             <label for = "overal-experience">Overal Experience</label>
-                            <select id = "rating-select">
+                            <select id = "rating-select" required name = "rating">
                                 <option value = "1">1</option>
                                 <option value = "2">2</option>
                                 <option value = "3">3</option>
                                 <option value = "4">4</option>
                                 <option selected = "selected" value = "5">5</option>
                             </select><img src='/media/icons/star.svg' class='star-icon'>
-                            <textarea type = "textarea" placeholder="Write your review here" id = "reviewText"></textarea>
+                            <textarea type = "textarea" placeholder="Write your review here" id = "reviewText" required name = "reviewText"></textarea>
                             <input type = "submit" value = "Submit">
 
                         </form>
@@ -69,6 +75,12 @@
                     {% endif %}
                 </div>
             </div>
+            {% if reviews.len != 0 %}
+            <div class="load-more-reviews">
+                <button class = "more-reviews">More Reviews</button>
+            </div>
+
+            {% endif %}
         </div>
     </div>
 
@@ -85,8 +97,9 @@
                     </div>
                 </div>
                 <div class="right-div">
-                    <div class="item-name"><a href = "/foods/{{food.id}}">{{food.name}}</a></div>
-                    <div class="item-rate">{{food.overal_rate}}</div>
+                    <div class="item-name"><a href = "/details/foods/{{food.id}}">{{food.name}}</a></div>
+                    <div class="item-rate">{{food.overal_rate}}<img src='/media/icons/star.svg' class='star-icon'>
+                    </div>
                     <div class="item-ratings">({{food.ratings}})</div>
                     <div class="item-price">${{food.price}}</div>
                     <div class="item-description">{{food.description}}</div>
@@ -106,6 +119,7 @@
                     <div class="item-gluten">Gluten Free: No</div>
                     {% endif %}
                     {% endif %}
+                    </div>
                 </div>
             </div>
             {% endfor %}

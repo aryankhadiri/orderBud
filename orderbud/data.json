@@ -1,18 +1,37 @@
 //Note: do not place any new line for each item. They all have to be on the same lane
 
 /****************** RESTAURANTS ******************/
-
 {"index":{"_id":1}}
-{"id":"1", "name": "restaurant1", "main_picture":"restaurant_main_pictures/1/1.jpg","street":"1234 First Avenue", "city":"San Jose", "state":"CA","zipcode":"95128","phone":"4081236565", "ratings":"0","overal_rate": "0", "type":"French"}
-
-
+{"id":1, "name": "Chelokababi", "main_picture":"restaurant_main_pictures/1/1.jpg","street":"1236 S Wolfe Rd", "city":"Sunnyvale", "state":"CA","zipcode":"94068","phone":"+14087371222", "ratings":4.3,"overal_rate": 1104, "type":"Persian"}
+{"index":{"_id":2}}
+{"id":2, "name": "Maggiano's Little Italy", "main_picture":"restaurant_main_pictures/2/2.jpg","street":"3055 Olin Ave", "city":"San Jose", "state":"CA","zipcode":"95128","phone":"+14084238973", "ratings":4.5,"overal_rate": 898, "type":"Italian"}
 /****************** FOODS ******************/
 {"index":{"_id":1}}
-{"id":"1", "restaurantId": "1", "restaurantName":"restaurant1", "name":"Chicken Sandwich", "vigen": "False", "gluten_free":"True","overal_rate": "0", "main_picture":"food_main_pictures/1.jpeg", "description":"authentic dish from southasia","ratings":"0", "type": "koran", "category": "Apetizer",  "favorited": "0", "price":12.99}
+{"id":1, "restaurantId": 2, "restaurantName":"Maggiano's Little Italy", "name":"Crispy Zucchini Fritte", "vigen": "True", "gluten_free":"True","overal_rate": 5, "main_picture":"food_main_pictures/1/1.jpg", "description":"(1740 cal)","ratings":200, "type": "Italian", "category": "Starters",  "favorited": 0, "price":11.50}
+{"index":{"_id":2}}
+{"id":2, "restaurantId": 2, "restaurantName":"Maggiano's Little Italy", "name":"Italian Meatballs", "vigen": "False", "gluten_free":"False","overal_rate": 5, "main_picture":"food_main_pictures/2/2.jpg", "description":"Marinara Sauce & Garlic Bread (1460 cal)","ratings":200, "type": "Italian", "category": "Starters",  "favorited": 0, "price":10.99}
+{"index":{"_id":3}}
+{"id":3, "restaurantId": 2, "restaurantName":"Maggiano's Little Italy", "name":"Classic Tomato Bruschetta", "vigen": "True", "gluten_free":"True","overal_rate": 5, "main_picture":"food_main_pictures/3/3.jpg", "description":"Fresh Tomatoes, Basil, Balsamic Vinegar, Roasted Garlic (1000 cal)","ratings":200, "type": "Italian", "category": "Starters",  "favorited": 0, "price":9.99}
+{"index":{"_id":4}}
+{"id":4, "restaurantId": 2, "restaurantName":"Maggiano's Little Italy", "name":"Garlic Bread", "vigen": "True", "gluten_free":"False","overal_rate": 5, "main_picture":"food_main_pictures/4/4.jpg", "description":"White Truffle Ricotta Butter & Italian Cheese (1250 cal)","ratings":200, "type": "Italian", "category": "Starters",  "favorited": 200, "price":10.99}
+{"index":{"_id":5}}
+{"id":5, "restaurantId": 2, "restaurantName":"Maggiano's Little Italy", "name":"Calamari Fritte", "vigen": "False", "gluten_free":"False","overal_rate": 5, "main_picture":"food_main_pictures/5/5.jpg", "description":"(860 cal)","ratings":200, "type": "Italian", "category": "Starters",  "favorited": 200, "price":15.99}
+{"index":{"_id":6}}
+{"id":6, "restaurantId": 2, "restaurantName":"Maggiano's Little Italy", "name":"Rigatoni Arrabbiata", "vigen": "False", "gluten_free":"False","overal_rate": 5, "main_picture":"food_main_pictures/6/6.jpg", "description":"Grilled Chicken, Spinach, Spicy Tomato Cream Sauce (1250 cal)","ratings":200, "type": "Italian", "category": "Specialty",  "favorited": 200, "price":18.50}
+{"index":{"_id":7}}
+{"id":7, "restaurantId": 2, "restaurantName":"Maggiano's Little Italy", "name":"Our Famous Rigatoni 'D'®", "vigen": "False", "gluten_free":"False","overal_rate": 5, "main_picture":"food_main_pictures/7/7.jpg", "description":"Herb-Roasted Chicken, Mushrooms, Caramelized Onions, Marsala Cream Sauce (1820 cal)","ratings":200, "type": "Italian", "category": "Specialty",  "favorited": 200, "price":20.50}
+{"index":{"_id":8}}
+{"id":8, "restaurantId": 2, "restaurantName":"Maggiano's Little Italy", "name":"Mushrrom Raviolu al Forno", "vigen": "True", "gluten_free":"False","overal_rate": 5, "main_picture":"food_main_pictures/8/8.jpg", "description":"Alfredo Sauce (780 cal)","ratings":200, "type": "Italian", "category": "Specialty",  "favorited": 200, "price":18.50}
+
+
 
 /****************** Foods Reviews **************/
 {"index":{"_id":1}}
-{"id":"1","food_id":"1","reviewerName":"test", "reviewerId": 4, "reviewText": "This was the best dish I have ever had", "timestamp": "2021-04-19", "rate": "5"}
+{"id":"1","food_id":"1","reviewerName":"test", "reviewerId": 1, "reviewTitle":"Best Dish in San jose!", "reviewText": "This was the best dish I have ever had", "timestamp": "2021-04-19", "rate": "5"}
+{"index":{"_id":2}}
+{"id":"2","food_id":"1","reviewerName":"test2", "reviewerId": 2, "reviewTitle":"Worst Dish in San jose!", "reviewText": "Worst Dish I have ever had", "timestamp": "2021-04-20", "rate": "1"}
 /****************** Restaurants Reviews **************/
 {"index":{"_id":1}}
-{"id":"1","restaurant_id":"1","reviewerName":"test", "reviewerId": 4, "reviewText": "This was the best dish I have ever had", "timestamp": "2021-04-19", "rate": "5"}
+{"id":"1","restaurant_id":"1","reviewerName":"test", "reviewerId": 1, "reviewTitle":"Best Restaurant in San Jose", "reviewText": "Best Restaurant Ever", "timestamp": "2021-04-19", "rate": "5"}
+{"index":{"_id":2}}
+{"id":"2","restaurant_id":"1","reviewerName":"test2", "reviewerId": 2, "reviewTitle":"Worst Restaurant in San Jose", "reviewText": "Worst Restaurant Ever", "timestamp": "2021-04-20", "rate": "1"}

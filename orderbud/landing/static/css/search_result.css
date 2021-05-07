@@ -1,14 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap');
 body{
     background:#f4f1f1;
+    
 }
 a:visited{
     color: inherit;
 }
+
 .main-content{
     width:80%;
     margin:auto;
     margin-top:4%;
+    height:100%;
 }
 
 .filters{
@@ -23,7 +26,6 @@ a:visited{
     width:85%;
     vertical-align:top;
     background:white;
-    height:100%;
     padding:1%;
     border-radius:5px;
 }
@@ -57,6 +59,10 @@ a:visited{
     width:100%;
     border-radius:3%;
    
+}
+.left-picture-food img{
+    width: 100%;
+    border-radius: 3%;
 }
 .right-side-food, .right-side-rest{
     width:82%;
@@ -99,6 +105,8 @@ a:visited{
     padding:2%;
     border-radius:3px;
     font-size:1.2vw;
+    max-height:20%;
+    overflow-y:auto;
 
 }
 .food-title{
@@ -123,7 +131,7 @@ a:visited{
 
 }
 .rest-div, .food-div{
-    padding: 0 0 2% 0;
+    padding: 2%;
 }
 .rest-rating div, .food-rating div{
     display:inline;
@@ -132,7 +140,8 @@ a:visited{
     margin-left:1%;
 }
 .star-icon{
-    width:1.2vw;
+    width:1.5vw;
+    vertical-align:text-bottom;
 }
 
 .total-rate{

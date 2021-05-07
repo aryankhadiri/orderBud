@@ -120,7 +120,7 @@ AUTH_USER_MODEL = 'authenRegist.User'
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = "media"
-
+LOGIN_URL = "/"
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
