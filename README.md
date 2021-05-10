@@ -19,20 +19,28 @@ OrderBud is an online menu platform that allows restaurants to create their menu
 
 ## **Steps to install the application**
 1. Install latest version of python (3 above)
-2. Download Elasticsearch from elasticsearch website and keep it running inside a terminal or a cmd window. Check for the port and make sure it is 9200
-3. Locate the file "requirements.txt" in the home directory and install all the required packages via:
+2. Download Elasticsearch from elasticsearch website and keep it running inside a terminal or a cmd window. Follow these steps:
+
+    unzip the downloaded elasticsearch package and copy paste it in a permanent location on disk. Then add the path to the bin folder within the elasticsearch folder to the system variables. For example:
+    ```bash
+    C:\Program Files\elasticsearch-7.12.0\bin 
+    ```
+Check for the port and make sure it is 9200. (By Default it is unless you change it) Link to elasticsearch download: https://www.elastic.co/downloads/elasticsearch
+
+3. To test if the elasticsearch running, try to go to localhost:9200 
+4. Locate the file "requirements.txt" in the home directory and install all the required packages via:
 ```bash
 pip install <packagename>
 ```
-4. Open terminal and navigate to the homedirectory where the manage.py file is located
-5. Run the following command:
+5. Open terminal and navigate to the homedirectory where the manage.py file is located
+6. Run the following command:
 ```bash
 python3 manage.py runserver 
 ```
-6. locate the response link and click on it to open the browser
+7. locate the response link and click on it to open the browser. By default it will be running on localhost:8000
 
 **Note:** The database is not on github. So in order to add information to the database you also need to install Kibana on your system and follow the elasticsearch tutorial to insert information into the database. The test data is inside the data.json which is in the home directory
-
+link to kibana install: https://www.elastic.co/downloads/kibana
 ## **High Level description of the system**
 * Backend: Backend is running by Django and Python which is the most important component of the system. 
 * Database: There are two databases in our system One is the Elasticsearch which includes all the data that are meant to be searchable. The other database is the Django database which is a sqlite database and as of now only stores the user informatoin for authentication purposes
