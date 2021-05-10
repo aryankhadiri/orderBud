@@ -40,13 +40,13 @@ def restaurants_details_view(request, id =id):
         except ElasticsearchException as e:
             messages.add_message(request, messages.ERROR, "There was an error adding your review.")
             return redirect("/details/restaurants/{}".format(id))
-        current_rate = restaurant_info["overal_rate"]
+        current_rate = restaurant_info["overall_rate"]
         allratings = restaurant_info["ratings"]
         newAllRatings = allratings + 1
         new_rate = round(((current_rate * allratings) + rate)/newAllRatings,1)
         update_body = {
             "doc":{
-                "overal_rate":new_rate,
+                "overall_rate":new_rate,
                 "ratings": newAllRatings
             }
             
@@ -113,13 +113,13 @@ def foods_details_view(request, id = id):
         except ElasticsearchException as e:
             messages.add_message(request, messages.ERROR, "There was an error adding your review.")
             return redirect("/details/foods/{}".format(id))
-        current_rate = food_info["overal_rate"]
+        current_rate = food_info["overall_rate"]
         allratings = food_info["ratings"]
         newAllRatings = allratings + 1
         new_rate = round(((current_rate * allratings) + rate)/newAllRatings,1)
         update_body = {
             "doc":{
-                "overal_rate":new_rate,
+                "overall_rate":new_rate,
                 "ratings": newAllRatings
             }
             
@@ -129,7 +129,7 @@ def foods_details_view(request, id = id):
         except ElasticsearchException as e:
             messages.add_message(messages.ERROR, "There was an error updating the ratings.")
         return redirect("/details/foods/{}".format(id))
-    pictures_path = "media/foods_pictures/{}/".format(id)
+    pictures_path = "media/food_pictures/{}/".format(id)
     try:
         list_of_files = os.listdir(BASE_DIR.joinpath(pictures_path))
     except FileNotFoundError as e:

@@ -29,7 +29,7 @@
                     {% endif %}
                 </div>
                 <div class="rate-info">
-                    <div class="stars">{{restaurant_info.overal_rate}}<img src = '/media/icons/star.svg' class = 'star-icon'></div>
+                    <div class="stars">{{restaurant_info.overall_rate}}<img src = '/media/icons/star.svg' class = 'star-icon'></div>
                     <div class="total-ratings" id = "total-ratings">(<p>{{restaurant_info.ratings}}</p>)</div>
                 </div>
                 <div class="address-contact">
@@ -98,17 +98,17 @@
                 </div>
                 <div class="right-div">
                     <div class="item-name"><a href = "/details/foods/{{food.id}}">{{food.name}}</a></div>
-                    <div class="item-rate">{{food.overal_rate}}<img src='/media/icons/star.svg' class='star-icon'>
+                    <div class="item-rate">{{food.overall_rate}}<img src='/media/icons/star.svg' class='star-icon'>
                     </div>
                     <div class="item-ratings">({{food.ratings}})</div>
                     <div class="item-price">${{food.price}}</div>
                     <div class="item-description">{{food.description}}</div>
                     <div class="misc-details">
-                    {% if food.vigen %}
-                    {% if food.vigen == "True" %}
-                    <div class="item-vigen">Vigen: Yes</div>
+                    {% if food.vegan %}
+                    {% if food.vegan == "True" %}
+                    <div class="item-vegan">vegan: Yes</div>
                     {%else%}
-                    <div class="item-vigen">Vigen: No</div>
+                    <div class="item-vegan">vegan: No</div>
                     {% endif %}
                     {% endif %}
 

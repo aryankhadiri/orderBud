@@ -213,10 +213,12 @@ nav{
 }
 .messages-link a{
   text-decoration: none;
+  color:white;
 }
 .messages-link a:visited{
   color:white;
 }
+.message-
 .messages-link:hover{
   background:rgb(0, 105, 0);
 }

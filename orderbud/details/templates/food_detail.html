@@ -22,17 +22,17 @@
                     Category: {{food_info.category}}
                 </div>
                 <div class="rate-info">
-                    <div class="stars">{{food_info.overal_rate}}<img src = '/media/icons/star.svg' class = 'star-icon'></div>
+                    <div class="stars">{{food_info.overall_rate}}<img src = '/media/icons/star.svg' class = 'star-icon'></div>
                     <div class="total-ratings" id = "total-ratings">(<p>{{food_info.ratings}}</p>)</div>
                     <div class="price-div">Price: ${{food_info.price}}</div>
                 </div>
                 <div class="food_description">{{food_info.description}}</div>
                 <div class="misc-details">
-                    {% if food_info.vigen %}
-                    {% if food_info.vigen == "True" %}
-                    <div class="item-vigen">Vigen: Yes</div>
+                    {% if food_info.vegan %}
+                    {% if food_info.vegan == "True" %}
+                    <div class="item-vegan">Vegan: Yes</div>
                     {%else%}
-                    <div class="item-vigen">Vigen: No</div>
+                    <div class="item-vegan">Vegan: No</div>
                     {% endif %}
                     {% endif %}
 

@@ -17,7 +17,7 @@ function displayFoods(food_data){
             food = food_data[i];
             $(".foods-results").append("<div class = 'food-div'><div class = 'left-picture-food'>"+ "<img src = '/media/"+food["_source"].main_picture +"'></div>" + 
             "<div class = 'right-side-food'>"+"<div class = 'food-name'>" + "<a href = '/details/foods/" + food["_source"]["id"] + "'>"+ food["_source"].name + 
-            "</a></div><div class = 'food-rating'>"+ "<div class = 'rate-value'>" + food["_source"].overal_rate +
+            "</a></div><div class = 'food-rating'>"+ "<div class = 'rate-value'>" + food["_source"].overall_rate +
             "</div><div class = 'star-rate'><img src = '/media/icons/star.svg' class = 'star-icon'></div>"+
             "<div class = 'total-rate'>" + "("+ food["_source"].ratings + ")" + "</div></div>" + "<div class = 'food-description'>" + food["_source"].description + "</div>" +
             "<div class = 'by-restaurant'>" + "By: <a href = '/details/restaurants/"+food["_source"].restaurantId + "' class = 'restaurant-name-for-food'>"+food["_source"].restaurantName + "</a></div>" + "</div></div>");
@@ -40,7 +40,7 @@ function displayRestaurants(restaurants_data){
             rest = restaurants_data[i]
             $(".restaurants-results").append("<div class = 'rest-div'><div class = 'left-picture-rest'>"+"<img src = '/media/"+rest["_source"].main_picture +"'></div>"+
             "<div class = 'right-side-rest'>"+"<div class = 'rest-name'>"+ "<a href = '/details/restaurants/"+rest["_source"]["id"] + "'>" + rest["_source"].name + "</a>" +
-            "</div><div class = 'rest-rating'>" + "<div class = 'rate-value'>" + rest["_source"].overal_rate + 
+            "</div><div class = 'rest-rating'>" + "<div class = 'rate-value'>" + rest["_source"].overall_rate + 
             "</div><div class = 'star-rate'><img src = '/media/icons/star.svg' class = 'star-icon'></div>"+ "<div class = 'total-rate'>" + "(" + rest["_source"].ratings + ")" + "</div>" +
             "</div><div class = 'rest-address'>" + rest["_source"].city + ","  + rest["_source"].state + "</div></div>");
         }
